@@ -1,0 +1,33 @@
+<h1 class="mb-4">Recipes</h1>
+
+<div *ngIf="recipes.length === 0" class="alert alert-info">
+  Aucun résultat
+</div>
+
+<div class="row">
+  <div class="col-md-4 mb-4" *ngFor="let recipe of recipes">
+    <div class="card h-100 shadow-sm">
+      <img
+        *ngIf="recipe.imageUrl"
+        [src]="recipe.imageUrl"
+        class="card-img-top"
+        alt="recipe image"
+      />
+
+      <div class="card-body">
+        <h5 class="card-title">{{ recipe.title }}</h5>
+        <p class="card-text">{{ recipe.description }}</p>
+      </div>
+
+      <div class="card-footer bg-white border-0">
+        <a
+          class="btn btn-outline-primary btn-sm"
+          [routerLink]="['/recipes', recipe._id]"
+        >
+          Voir
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+

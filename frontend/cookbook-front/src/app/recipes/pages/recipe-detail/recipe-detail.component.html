@@ -1,0 +1,47 @@
+
+<div *ngIf="loading" class="text-center my-5">
+    <div class="spinner-border text-primary"></div>
+  </div>
+  
+  <div *ngIf="!loading" class="row">
+    <div class="col-md-6">
+      <img
+        *ngIf="recipe.imageUrl"
+        [src]="recipe.imageUrl"
+        class="img-fluid rounded shadow-sm"
+      />
+    </div>
+  
+    <div class="col-md-6">
+      <h1>{{ recipe.title }}</h1>
+      <p class="text-muted">{{ recipe.description }}</p>
+  
+      <h5 class="mt-4">Ingrédients</h5>
+      <ul>
+        <li *ngFor="let ingredient of recipe.ingredients">
+          {{ ingredient }}
+        </li>
+      </ul>
+  
+      <h5 class="mt-4">Étapes</h5>
+      <ol>
+        <li *ngFor="let step of recipe.steps">
+          {{ step }}
+        </li>
+      </ol>
+  
+      <a
+        class="btn btn-outline-secondary mt-3"
+        routerLink="/recipes"
+      >
+        ← Retour
+      </a>
+      <a [routerLink]="['/recipes/edit', recipe._id]">
+        Modifier
+      </a>
+      <button (click)="onDelete()" style="margin-right:10px">
+        Supprimer
+      </button>
+    </div>
+  </div>
+  

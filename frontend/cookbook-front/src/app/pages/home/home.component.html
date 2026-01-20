@@ -1,0 +1,72 @@
+<section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <span class="badge">85% would make this again</span>
+        <h1>Mighty Super Cheesecake</h1>
+        <p>
+          Look no further for a creamy and ultra smooth classic cheesecake recipe!
+        </p>
+        <a routerLink="/recipes" class="btn">
+          Voir les recettes →
+        </a>
+      </div>
+  
+      <div class="hero-image">
+        <img src="assets/hero-cheesecake.jpg" alt="Cheesecake">
+      </div>
+    </div>
+  </section>
+  <section class="super-delicious">
+    <h2>Super Delicious</h2>
+  
+    <div class="recipes-grid">
+      <div *ngFor="let recipe of featuredRecipes" class="recipe-card">
+        <img *ngIf="recipe.imageUrl" [src]="recipe.imageUrl">
+        <h3>{{ recipe.title }}</h3>
+      </div>
+    </div>
+  </section>
+  <section class="sweet-tooth">
+    <h2>Sweet Tooth</h2>
+  
+    <div class="recipes-grid">
+      <div *ngFor="let recipe of desserts" class="recipe-card">
+        <img *ngIf="recipe.imageUrl" [src]="recipe.imageUrl">
+        <h3>{{ recipe.title }}</h3>
+      </div>
+    </div>
+  </section>
+  
+  
+  <section class="categories">
+    <h2>Popular Categories</h2>
+  
+    <div class="categories-grid">
+      <div class="category" (click)="loadAll()">Tous les plats</div>
+      <div class="category" (click)="filterByCategory('pasta')">Pasta</div>
+      <div class="category" (click)="filterByCategory('pizza')">Pizza</div>
+      <div class="category" (click)="filterByCategory('dessert')">Desserts</div>
+    </div>
+  </section>
+  
+  
+<section class="latest">
+  <h2>Latest Recipes</h2>
+
+  <p *ngIf="loading">Chargement...</p>
+
+  <p *ngIf="!loading && recipes.length === 0">
+    Aucune recette disponible
+  </p>
+
+  <div class="recipes-grid">
+    <div *ngFor="let recipe of recipes" class="recipe-card">
+      <h3>{{ recipe.title }}</h3>
+      <p>{{ recipe.description }}</p>
+
+      <a [routerLink]="['/recipes', recipe._id]">
+        Voir →
+      </a>
+    </div>
+  </div>
+</section>

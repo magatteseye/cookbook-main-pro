@@ -1,0 +1,59 @@
+
+<h1 class="mb-4">
+    {{ isEdit ? 'Modifier la recette' : 'Créer une recette' }}
+  </h1>
+  
+  <form (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label class="form-label">Titre</label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="recipe.title"
+        name="title"
+        required
+      />
+    </div>
+    <label>Catégorie</label>
+
+
+    <select
+    name="category"
+    [(ngModel)]="recipe.category"
+    required
+  >
+    <option value="">-- Choisir une catégorie --</option>
+    <option value="pasta">Pasta</option>
+    <option value="pizza">Pizza</option>
+    <option value="dessert">Dessert</option>
+  </select>
+  
+  
+    <div class="mb-3">
+      <label class="form-label">Description</label>
+      <textarea
+        class="form-control"
+        [(ngModel)]="recipe.description"
+        name="description"
+        rows="3"
+        required
+      ></textarea>
+    </div>
+  
+    <div class="mb-3">
+      <label class="form-label">Image URL</label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="recipe.imageUrl"
+        name="imageUrl"
+      />
+    </div>
+  
+    <button class="btn btn-primary">
+      {{ isEdit ? 'Mettre à jour' : 'Créer' }}
+    </button>
+  </form>
+  
+
+  

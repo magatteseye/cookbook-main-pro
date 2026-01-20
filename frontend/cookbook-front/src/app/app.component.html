@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" routerLink="/">Tastebite</a>
+    <form class="d-flex ms-3" (ngSubmit)="search()">
+      <input
+        class="form-control me-2"
+        type="search"
+        placeholder="Search product"
+        [(ngModel)]="query"
+        name="query"
+      />
+      <button class="btn btn-outline-primary" type="submit">
+        Search
+      </button>
+    </form>
+    
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/recipes">Recipes</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-primary ms-2" routerLink="/recipes/new">
+            + Add Recipe
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container my-5">
+  <router-outlet></router-outlet>
+</div>
+

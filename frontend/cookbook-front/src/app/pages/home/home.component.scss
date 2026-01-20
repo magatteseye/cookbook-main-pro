@@ -1,0 +1,81 @@
+.hero {
+    padding: 40px;
+    background: #eef6fb;
+  }
+  
+  .hero-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+  
+  .hero-image img {
+    max-width: 400px;
+    border-radius: 12px;
+  }
+  
+  .categories-grid,
+  .recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .recipe-card,
+  .category {
+    padding: 20px;
+    border-radius: 10px;
+    background: #f9f9f9;
+  }
+  
+
+  //////
+  /// 
+  /// 
+   .newsletter {
+  background: #fde2d5;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.newsletter-content {
+  max-width: 600px;
+  margin: auto;
+}
+
+.newsletter h2 {
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+.newsletter p {
+  color: #555;
+  margin-bottom: 24px;
+}
+
+.newsletter form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.newsletter input {
+  padding: 12px;
+  width: 260px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.newsletter button {
+  padding: 12px 24px;
+  background: #ff7a3d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.newsletter small {
+  color: #777;
+}
