@@ -30,18 +30,26 @@
         </li>
       </ol>
   
-      <a
-        class="btn btn-outline-secondary mt-3"
-        routerLink="/recipes"
-      >
-        ← Retour
-      </a>
-      <a [routerLink]="['/recipes/edit', recipe._id]">
-        Modifier
-      </a>
-      <button (click)="onDelete()" style="margin-right:10px">
-        Supprimer
-      </button>
+      <div class="actions">
+        <a class="btn btn-outline-secondary" routerLink="/recipes">
+          ← Retour
+        </a>
+      
+        <a
+          class="btn btn-outline-primary"
+          [routerLink]="['/recipes/edit', recipe._id]"
+        >
+          Modifier
+        </a>
+      
+        <button
+          class="btn btn-outline-danger"
+          (click)="onDelete()"
+        >
+          Supprimer
+        </button>
+      </div>
+      
     </div>
   </div>
   

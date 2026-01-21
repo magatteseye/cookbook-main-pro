@@ -30,4 +30,10 @@ export class AppComponent {
       }
     });
   }
+
+  onSearch(): void {
+    if (this.query) {
+      window.location.href = `/search?q=${this.query}`;
+    }
+  }
 }

@@ -1,59 +1,88 @@
-
 <h1 class="mb-4">
-    {{ isEdit ? 'Modifier la recette' : 'Créer une recette' }}
-  </h1>
-  
-  <form (ngSubmit)="onSubmit()">
-    <div class="mb-3">
-      <label class="form-label">Titre</label>
-      <input
-        type="text"
-        class="form-control"
-        [(ngModel)]="recipe.title"
-        name="title"
-        required
-      />
-    </div>
-    <label>Catégorie</label>
+  {{ isEdit ? 'Modifier la recette' : 'Créer une recette' }}
+</h1>
 
+<form (ngSubmit)="onSubmit()">
 
+  <!-- TITRE -->
+  <div class="mb-3">
+    <label class="form-label">Titre</label>
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="recipe.title"
+      name="title"
+      required
+    />
+  </div>
+
+  <!-- CATÉGORIE -->
+  <div class="mb-3">
+    <label class="form-label">Catégorie</label>
     <select
-    name="category"
-    [(ngModel)]="recipe.category"
-    required
-  >
-    <option value="">-- Choisir une catégorie --</option>
-    <option value="pasta">Pasta</option>
-    <option value="pizza">Pizza</option>
-    <option value="dessert">Dessert</option>
-  </select>
-  
-  
-    <div class="mb-3">
-      <label class="form-label">Description</label>
-      <textarea
-        class="form-control"
-        [(ngModel)]="recipe.description"
-        name="description"
-        rows="3"
-        required
-      ></textarea>
-    </div>
-  
-    <div class="mb-3">
-      <label class="form-label">Image URL</label>
-      <input
-        type="text"
-        class="form-control"
-        [(ngModel)]="recipe.imageUrl"
-        name="imageUrl"
-      />
-    </div>
-  
-    <button class="btn btn-primary">
-      {{ isEdit ? 'Mettre à jour' : 'Créer' }}
-    </button>
-  </form>
-  
+      class="form-select"
+      name="category"
+      [(ngModel)]="recipe.category"
+      required
+    >
+      <option value="">-- Choisir une catégorie --</option>
+      <option value="pasta">Pasta</option>
+      <option value="pizza">Pizza</option>
+      <option value="dessert">Dessert</option>
+    </select>
+  </div>
+
+  <!-- DESCRIPTION -->
+  <div class="mb-3">
+    <label class="form-label">Description</label>
+    <textarea
+      class="form-control"
+      [(ngModel)]="recipe.description"
+      name="description"
+      rows="3"
+      required
+    ></textarea>
+  </div>
+
+  <!-- IMAGE -->
+  <div class="mb-3">
+    <label class="form-label">Image URL</label>
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="recipe.imageUrl"
+      name="imageUrl"
+    />
+  </div>
+
+  <!-- INGREDIENTS -->
+  <div class="mb-3">
+    <label class="form-label">Ingrédients (1 par ligne)</label>
+    <textarea
+      class="form-control"
+      name="ingredients"
+      [(ngModel)]="ingredientsText"
+      rows="4"
+      required
+    ></textarea>
+  </div>
+
+  <!-- STEPS -->
+  <div class="mb-3">
+    <label class="form-label">Étapes (1 par ligne)</label>
+    <textarea
+      class="form-control"
+      name="steps"
+      [(ngModel)]="stepsText"
+      rows="4"
+      required
+    ></textarea>
+  </div>
+
+  <button class="btn btn-primary">
+    {{ isEdit ? 'Mettre à jour' : 'Créer' }}
+  </button>
+</form>
+
 
   

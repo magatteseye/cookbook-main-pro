@@ -29,53 +29,40 @@
   }
   
 
-  //////
-  /// 
-  /// 
-   .newsletter {
-  background: #fde2d5;
-  padding: 80px 20px;
-  text-align: center;
+ 
+
+  /* === GRILLES === */
+.recipes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 🔥 comme la maquette */
+  gap: 24px;
+  margin-top: 20px;
 }
 
-.newsletter-content {
-  max-width: 600px;
-  margin: auto;
-}
-
-.newsletter h2 {
-  font-size: 36px;
-  margin-bottom: 16px;
-}
-
-.newsletter p {
-  color: #555;
-  margin-bottom: 24px;
-}
-
-.newsletter form {
+/* === CARD === */
+.recipe-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden; /* 🔥 obligatoire */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 16px;
+  flex-direction: column;
 }
 
-.newsletter input {
-  padding: 12px;
-  width: 260px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+/* === IMAGE === */
+.recipe-card img {
+  width: 100%;
+  height: 220px;          /* 🔥 TAILLE FIXE */
+  object-fit: cover;     /* 🔥 ESSENTIEL */
 }
 
-.newsletter button {
-  padding: 12px 24px;
-  background: #ff7a3d;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+/* === TEXTE === */
+.card-content {
+  padding: 14px;
 }
 
-.newsletter small {
-  color: #777;
+.recipe-card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
 }

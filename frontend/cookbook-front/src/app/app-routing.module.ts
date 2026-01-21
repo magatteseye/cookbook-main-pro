@@ -1,15 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-
+import { SearchComponent } from './pages/search/search.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  {
-    path: 'recipes',
-    loadChildren: () =>
-      import('./recipes/recipes.module').then(m => m.RecipesModule)
-  }
+  { path: 'search', component: SearchComponent },
+  { path: 'recipes',loadChildren: () => import('./recipes/recipes.module').then(m => m.RecipesModule) }
 ];
 
 @NgModule({
@@ -17,3 +14,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
+
+

@@ -1,0 +1,45 @@
+/* ===========================
+   RECIPE DETAIL PAGE
+=========================== */
+
+img {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: 16px;
+  }
+  
+  /* Titres */
+  h1 {
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  h5 {
+    font-weight: 600;
+    margin-top: 24px;
+  }
+  
+  /* Listes */
+  ul,
+  ol {
+    padding-left: 18px;
+  }
+  
+  li {
+    margin-bottom: 6px;
+  }
+  
+  /* Boutons */
+  .actions {
+    margin-top: 30px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  
+  .actions a,
+  .actions button {
+    min-width: 120px;
+  }
+  
